@@ -1,16 +1,16 @@
 import React, { useContext } from 'react'
+import Card from '../../Components/Card'
 import { ProductContext } from '../../Context/ProductContext'
 import './styles.css'
 const Products = () => {
     const {productlist,loading} = useContext(ProductContext)
   return (
-    <div>
+    <div className='main-card'>
        {
         !loading? (productlist.map((item)=>(
-            <div>
-                <h1>{item.price}</h1>
-                <h1>{item.title}</h1>
-            </div>
+          
+               <Card items={item} />
+
         ))):<h1>loading...</h1>
       }
     </div>
