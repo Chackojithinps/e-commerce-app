@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './styles.css'
 const Card = ({items}) => {
   return (
@@ -13,7 +14,10 @@ const Card = ({items}) => {
           </div>
          
          <div className='cardImage'>
-             <img className='cardImg' src={items.image}></img>
+          <Link to={`product/${items.id}`}>
+            <img className='cardImg' src={items.image}></img>
+          </Link>
+             
          </div>
          <div className='cardBody'>
              <>
