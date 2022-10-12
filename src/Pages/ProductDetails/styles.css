@@ -80,8 +80,15 @@ button.product-button {
     width: 125px;
     animation: boun;
 }
+.product-rating{
+    display: flex;
+}
 .yellow-star{
     color: orange;
+}
+.product-count {
+    margin-left: 9px;
+    margin-top: -17px;
 }
 .product-btntext {
     color: hsla(240,5%,96%,.8);

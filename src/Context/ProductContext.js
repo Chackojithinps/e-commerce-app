@@ -8,17 +8,40 @@ export const Cart=({children})=>{
     const [loading,setLoading]=useState(false)
     const [product,setProduct]=useState({})
     const [productId,setProductId]=useState("")
+    const [categories,setCategories]=useState([])
+    const [category,setCategory]=useState('')
+
+    useEffect(()=>{
+        setLoading(true)
+        const getCategories=async()=>{
+            await axios.get(`https://fakestoreapi.com/products/categories`).then((res)=>{
+                setCategories(res.data)
+                setLoading(false)
+            })
+        }
+        getCategories()
+    },[]) 
+
     useEffect(()=>{
         setLoading(true)
         const getProducts=async()=>{
-            await axios.get("https://fakestoreapi.com/products").then((res)=>{
-            console.log(res)
-            setProductlist(res.data)
-            setLoading(false)
-        })
+            if(category && category.length>0){
+               await axios.get(`https://fakestoreapi.com/products/category/${category}`).then((res)=>{
+                  setProductlist(res.data)
+                  setLoading(false)
+               })
+              
+            }else{
+                await axios.get("https://fakestoreapi.com/products").then((res)=>{
+                    console.log(res)
+                    setProductlist(res.data)
+                    setLoading(false)
+                })
+            }
+            
     }
       getProducts()
-    },[])
+    },[category])
 
     useEffect(()=>{
         setLoading(true)
@@ -30,8 +53,11 @@ export const Cart=({children})=>{
         }
         getProduct()
     },[productId])
+
+   
+
     const values={
-        productlist,loading,product,setProductId
+        productlist,loading,product,setProductId,categories,setCategory
     }
     return(
         <ProductContext.Provider value={values} >{children}</ProductContext.Provider>

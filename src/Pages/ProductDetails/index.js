@@ -11,7 +11,7 @@ const ProductDetails = () => {
   return (
     <div>
         {
-          !loading?
+          !loading&&product?.id?  //we can give either title or anything in product
           <div className='product-container'>
               <div className='left-sec'>
                  <div className='productImage'>
@@ -25,18 +25,7 @@ const ProductDetails = () => {
                  <div className='product-title'>
                      <h1>{product.title}</h1>
                  </div>
-                 {/* <div className='product-rating'>
-                    <div className='product-startIcon'>
-                        <span className="fa fa-star checked"></span>
-                        <span className="fa fa-star checked"></span>
-                        <span className="fa fa-star checked"></span>
-                        <span className="fa fa-star checked"></span>
-                        <span className="fa fa-star"></span>
-                    </div>
-                    <div className='product-count'>
-                      <p>{product.rating}</p>
-                    </div>
-                 </div> */}
+                 
                  <div className='product-rating'>
                        <div className='product-starIcon'>
                             <i className="fa-solid fa-star yellow-star"></i>
@@ -45,6 +34,9 @@ const ProductDetails = () => {
                             <i className="fa-solid fa-star yellow-star"></i>
                             <i className="fa-solid fa-star "></i>
                         </div>
+                        <div className='product-count'>
+                            <p>({product.rating.count})</p>
+                          </div>
                   </div>
                  <div className='product-description'>
                      <p className='product-des'>{product.description}</p>
@@ -59,7 +51,7 @@ const ProductDetails = () => {
                       <div className='product-btn'>
                          <button className='product-button'>
                           <i class="fa-solid fa-cart-shopping"></i>
-                          <span className='product-btntxt'>Add to cart!</span>
+                          <span className='product-btntext'>Add to cart!</span>
                           </button>
                           
                       </div>

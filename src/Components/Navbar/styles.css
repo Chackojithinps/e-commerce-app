@@ -1,0 +1,9 @@
+.navbar-container {
+    display: flex;
+    gap: 19px;
+    /* text-decoration: none; */
+}
+
+ .navbar-link{
+    text-decoration: none;
+}
