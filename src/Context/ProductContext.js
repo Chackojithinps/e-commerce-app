@@ -9,7 +9,7 @@ export const Cart=({children})=>{
     const [product,setProduct]=useState({})
     const [productId,setProductId]=useState("")
     const [categories,setCategories]=useState([])
-    const [category,setCategory]=useState('')
+    const [category,setCategory]=useState("")
 
     useEffect(()=>{
         setLoading(true)

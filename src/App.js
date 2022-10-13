@@ -10,7 +10,9 @@ function App() {
       <Routes>
          
          <Route path="/" element={ <Products/>}></Route>
+        
          <Route path='/:category_id'  element={<Products/>}></Route>
+         
          <Route path="/product/:product_id" element={ <ProductDetails/>}></Route>
       </Routes>
       
