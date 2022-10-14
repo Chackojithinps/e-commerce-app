@@ -1,9 +1,21 @@
 .navbar-container {
-    display: flex;
-    gap: 19px;
-    /* text-decoration: none; */
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: rgba(24,24,27,.1);
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
 }
 
  .navbar-link{
     text-decoration: none;
+}
+.navbar-all{
+    text-decoration: none;
+}
+.navbar-items {
+    display: flex;
+    gap: 6rem;
+    margin-left: 15rem;
+}
+.navbar-link:hover{
+    color: green;
 }

@@ -10,7 +10,8 @@ export const Cart=({children})=>{
     const [productId,setProductId]=useState("")
     const [categories,setCategories]=useState([])
     const [category,setCategory]=useState("")
-
+    const [count,setCount]=useState(0)
+   
     useEffect(()=>{
         setLoading(true)
         const getCategories=async()=>{
@@ -54,10 +55,9 @@ export const Cart=({children})=>{
         getProduct()
     },[productId])
 
-   
 
     const values={
-        productlist,loading,product,setProductId,categories,setCategory
+        productlist,loading,product,setProductId,categories,setCategory,count,setCount
     }
     return(
         <ProductContext.Provider value={values} >{children}</ProductContext.Provider>

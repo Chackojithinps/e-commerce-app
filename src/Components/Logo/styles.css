@@ -1,0 +1,51 @@
+img.logo-image {
+    width: 20px;
+    background: orange;
+    color: whie;
+    color: orange;
+}
+
+.image-logo {
+    background: orange;
+    width: 35px;
+    border-radius: 7px;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    height: 33px;
+}
+
+.logo-cart-button{
+    
+    margin-top: 5px;
+    text-align: center;
+    margin-left: 3px;
+    font-size: 22px;
+}
+.Logo-container {
+    display: flex;
+}
+
+.logo-name {
+    margin-left: 13px;
+    margin-top: -12px;
+    color: darkorange;
+}
+svg.first-cartIcon {
+    height: 37px;
+    /* font-size: 66px; */
+    width: 32px;
+    /* margin-left: 62rem; */
+    margin-top: 23px;
+    cursor: pointer;
+}
+svg.first-likeicon {
+    width: 29px;
+    margin-top: 22px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.logo-icons {
+    margin-left: 59rem;
+    display: flex;
+}

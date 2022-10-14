@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import Card from '../../Components/Card'
+import Loader from '../../Components/Loader'
 import { ProductContext } from '../../Context/ProductContext'
 import './styles.css'
 const Products = () => {
@@ -11,7 +12,7 @@ const Products = () => {
           
                <Card items={item} />
 
-        ))):<h1>loading...</h1>
+        ))):<Loader/>
       }
     </div>
   )

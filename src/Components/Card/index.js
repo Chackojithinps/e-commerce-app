@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { ProductContext } from '../../Context/ProductContext'
 import './styles.css'
 const Card = ({items}) => {
+  const {count,setCount}=useContext(ProductContext)
+  const handleCart=()=>{
+    setCount(count+1)
+   
+  }
   return (
     
     <div className='card'>
@@ -43,8 +49,7 @@ const Card = ({items}) => {
               <p>${items.price}</p>
           </div>
           <div className='add-to-cart'>
-             
-             <button className='cart-button'>
+             <button className='cart-button' onClick={handleCart}>
              <i class="fa-solid fa-cart-shopping"></i>
               <span className='cartbtn-text'>Add to cart!</span></button>
           </div>

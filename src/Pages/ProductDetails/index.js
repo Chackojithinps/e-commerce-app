@@ -1,10 +1,11 @@
 import React, { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import Loader from '../../Components/Loader';
 import { ProductContext } from '../../Context/ProductContext';
 import './styles.css'
 const ProductDetails = () => {
     const {product_id} = useParams();
-    const {loading,setProductId,product} =useContext(ProductContext)
+    const {loading,setProductId,product,setCount,count} =useContext(ProductContext)
     useEffect(()=>{
       setProductId(product_id)
     },[product_id])
@@ -49,7 +50,7 @@ const ProductDetails = () => {
                           <p className='productprice'>${product.price}</p>
                       </div>
                       <div className='product-btn'>
-                         <button className='product-button'>
+                         <button onClick={()=>{setCount(count+1)}} className='product-button'>
                           <i class="fa-solid fa-cart-shopping"></i>
                           <span className='product-btntext'>Add to cart!</span>
                           </button>
@@ -62,7 +63,7 @@ const ProductDetails = () => {
                   </div>
               </div>
           </div>
-          :<h1>loading...</h1>
+          :<Loader/>
         }
     </div>
   )

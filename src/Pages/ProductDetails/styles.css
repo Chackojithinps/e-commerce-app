@@ -72,13 +72,17 @@ img.product-img {
 }
 
 button.product-button {
-    background: blue;
+    background: rgba(0, 75, 255, 0.59);;
     height: 35px;
     border-radius: 7px;
     border: none;
     outline: none;
     width: 125px;
     animation: boun;
+    cursor: pointer;
+}
+.product-button:hover{
+    background-color: rgba(255, 221, 0, 0.73);
 }
 .product-rating{
     display: flex;
@@ -107,6 +111,7 @@ p.productprice {
     margin-top: 28px;
     margin-left: 14px;
     font-size: 23px;
+    cursor: pointer;
 }
 .product-heartIcon:hover{
    color: red;

@@ -6,19 +6,22 @@ const Navbar = () => {
     const {categories,setCategory}=useContext(ProductContext)
   return (
     <nav className='navbar-container'>
-        <Link to='/' >
-           <h1 onClick={()=>setCategory("")}>All</h1>
-        </Link>
-        {
-            categories && categories.map((item)=>(
-                <div >
-                    <Link className='navbar-link' to={`/${item}`}>
-                        <h1 onClick={()=>{setCategory(item)}}>{item}</h1>
-                    </Link>
-                </div>
-               
-            ))
-        }
+        <div className='navbar-items'>
+                <Link className='navbar-link' to='/' >
+                <h1 className='navbar-all' onClick={()=>setCategory("")}>All</h1>
+                </Link>
+                {
+                    categories && categories.map((item)=>(
+                        <div >
+                            <Link className='navbar-link' to={`/${item}`}>
+                                <h1 onClick={()=>{setCategory(item)}}>{item}</h1>
+                            </Link>
+                        </div>
+                    
+                    ))
+                }
+        </div>
+        
     </nav>
   )
 }
