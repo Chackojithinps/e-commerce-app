@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+
 import { ProductContext } from '../../Context/ProductContext'
 import './styles.css'
 const Logo = () => {
